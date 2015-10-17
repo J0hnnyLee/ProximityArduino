@@ -29,7 +29,7 @@ void loop() {
   delay(70);                   // datasheet suggests at least 65 milliseconds
 
   // step 3: instruct sensor to return a particular echo reading
-    Wire.beginTransmission(112); // transmit to device #112
+  Wire.beginTransmission(112); // transmit to device #112
   Wire.write(byte(0x02));      // sets register pointer to echo #1 register (0x02)
   Wire.endTransmission();      // stop transmitting
 
@@ -38,16 +38,16 @@ void loop() {
 
   // step 5: receive reading from sensor
   if (2 <= Wire.available()) { // if two bytes were received
-    reading = Wire.read();  // receive high byte (overwrites previous reading)
+    reading = Wire.read();     // receive high byte (overwrites previous reading)
     reading = reading << 8;    // shift high byte to be high 8 bits
-    reading |= Wire.read(); // receive low byte as lower 8 bits
+    reading |= Wire.read();    // receive low byte as lower 8 bits
     Serial.println(reading);   // print the reading
   }
   // Writing to the pins turning them on and off. needs work
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);              // wait for a second
+  digitalWrite(13, HIGH);     // turn the LED on (HIGH is the voltage level)
+  delay(1000);                // wait for a second
+  digitalWrite(13, LOW);      // turn the LED off by making the voltage LOW
+  delay(1000);                // wait for a second
 
 
   delay(250);                  // wait a bit since people have to read the output :)
