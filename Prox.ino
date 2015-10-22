@@ -9,9 +9,9 @@
 #define DELAY_BETWEEN_GROUPS 250
 #define TRIGGER_LENGTH 11
 // LED output pin definitions
-#define RED_LED 14
-#define GREEN_LED 15
-#define BLUE_LED 16
+#define RED_LED 11
+#define GREEN_LED 10
+#define BLUE_LED 9
 // Inch distances for indicators, red is on for anything less than BLUE_ON.
 // BLUE_ON is the closest edge of the sweet spot, GREEN_ON is the farthest edge.
 #define ALL_OFF 96
